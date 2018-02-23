@@ -17,7 +17,7 @@ Size.onchange = function fontSize() {
       } 
     }
     else {
-    alert("Введите число от 8 до 24");
+    alert("Введите целое число от 8 до 24");
     }
 }
 // Меняем цвет background
@@ -40,6 +40,8 @@ bg_color[i].onclick = function(event) {
   }
 }
 }
+
+
 
 // Меняем шрифт
 var font_text = document.getElementsByName("font");

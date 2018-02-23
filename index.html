@@ -4,7 +4,21 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Главная</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyA2NT7zgNRF9Kzv3OOUwJjw72JNl2S5Egs",
+        authDomain: "myexample-80e88.firebaseapp.com",
+        databaseURL: "https://myexample-80e88.firebaseio.com",
+        projectId: "myexample-80e88",
+        storageBucket: "myexample-80e88.appspot.com",
+        messagingSenderId: "216354619274"
+    };
+    firebase.initializeApp(config);
+    </script>
 	<script src="js/custom.js" defer></script>
+	<script src="js/index.js" defer></script>
 </head>
 <body>
 <header>
@@ -30,19 +44,41 @@
 						<span class="nav_wrap"><a class="nav_link" href="">Articles</a></span>
 						</li>
 					</ul> 
-					<div class="header_registration">
-						<form class="header_form">
-							<input class="form_login" type="text" name="login" placeholder="Login">
-							<input class="form_password" type="password" name="password" placeholder="Password">
-							<input class="form_rg" type="button" value="Registration">
-						</form>
-					</div>
-				</div>
-			</div>
-	
+					<div  id="user_name">Привет, noname</div>
+				</div>				
+			</div>	
 		</div>
+
 	</div>
 </header>
+
+<section class="form wrapper">
+	<p id="errors"></p>
+
+    <div class="registration">
+        <form action="#" class="register" >
+            <fieldset>
+                <legend>Зарегистрироваться</legend>
+                <input type="text" placeholder="name" id="register_name">
+                <input type="email" placeholder="email" id="register_login">
+                <input type="password"  placeholder="password" id="register_password">
+                <input type="password" placeholder="password confirmation" id="password_confirmation" >
+                <button type="submit" id="register">Регистрация</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="login">
+        <form action="#" class="login">
+            <fieldset>
+                <legend>Войти</legend>
+                <input type="email" placeholder="login" id="auth_login">
+                <input type="password" placeholder="password" id="auth_password">
+                <button type="submit" id="auth">Войти</button>
+            </fieldset>
+        </form>
+    </div>
+</section>
 <section class="content">
 	<div class="wrapper">
 
